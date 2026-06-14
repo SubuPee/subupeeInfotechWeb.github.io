@@ -1085,26 +1085,42 @@
 
 
 
-document.addEventListener('keydown', function(e) {
+// Disable Right Click
+document.addEventListener("contextmenu", function (e) {
+    e.preventDefault();
+    return false;
+});
 
-    if (e.key === 'F12') {
+// Disable DevTools Shortcuts
+document.addEventListener("keydown", function (e) {
+
+    // F12
+    if (e.keyCode == 123) {
         e.preventDefault();
+        return false;
     }
 
-    if (e.ctrlKey && e.shiftKey && e.key === 'I') {
+    // Ctrl+Shift+I
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
         e.preventDefault();
+        return false;
     }
 
-    if (e.ctrlKey && e.shiftKey && e.key === 'J') {
+    // Ctrl+Shift+J
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {
         e.preventDefault();
+        return false;
     }
 
-    if (e.ctrlKey && e.key === 'U') {
+    // Ctrl+Shift+C
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 67) {
         e.preventDefault();
+        return false;
     }
 
-    if (e.ctrlKey && e.shiftKey && e.key === 'C') {
+    // Ctrl+U
+    if (e.ctrlKey && e.keyCode == 85) {
         e.preventDefault();
+        return false;
     }
-
 });
